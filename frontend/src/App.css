@@ -1,0 +1,200 @@
+.app {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+    sans-serif;
+}
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.app-header h1 {
+  color: #2c3e50;
+  margin: 0;
+}
+
+.new-quote-btn {
+  background: #3498db;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s ease;
+}
+
+.new-quote-btn:hover {
+  background: #2980b9;
+}
+
+/* Quote Card Styles */
+.quote-card {
+  background: white;
+  border-radius: 12px;
+  padding: 30px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e0e0e0;
+}
+
+.quote-content {
+  margin-bottom: 20px;
+}
+
+.quote-text {
+  font-size: 24px;
+  line-height: 1.6;
+  color: #2c3e50;
+  margin: 0 0 20px 0;
+  font-style: italic;
+}
+
+.quote-author {
+  font-size: 18px;
+  color: #7f8c8d;
+  margin: 0;
+  text-align: right;
+}
+
+.quote-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 15px;
+}
+
+.tag {
+  background: #ecf0f1;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  color: #7f8c8d;
+}
+
+.quote-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 20px;
+  border-top: 1px solid #ecf0f1;
+}
+
+.like-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #e74c3c;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.like-btn:hover:not(:disabled) {
+  background: #c0392b;
+}
+
+.like-btn:disabled {
+  background: #bdc3c7;
+  cursor: not-allowed;
+}
+
+.like-icon {
+  font-size: 18px;
+}
+
+.like-count {
+  font-weight: 600;
+}
+
+.popularity {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #7f8c8d;
+}
+
+.popularity-score {
+  font-weight: 600;
+  color: #27ae60;
+}
+
+/* Popular Quotes Styles */
+.popular-quotes {
+  margin-top: 40px;
+}
+
+.popular-quotes h3 {
+  color: #2c3e50;
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+.popular-quotes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.popular-quote-card {
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e0e0e0;
+}
+
+/* Loading and Error States */
+.loading,
+.error {
+  text-align: center;
+  padding: 40px;
+  color: #7f8c8d;
+}
+
+.error {
+  color: #e74c3c;
+}
+
+.spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  border-top-color: transparent;
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .app-header {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+
+  .quote-text {
+    font-size: 20px;
+  }
+
+  .popular-quotes-grid {
+    grid-template-columns: 1fr;
+  }
+}
